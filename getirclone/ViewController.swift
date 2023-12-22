@@ -6,14 +6,23 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        self.navigationController?.toolbar.tintColor = .white
     }
 
-
+    @IBAction func loginAction(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "login") as! LoginViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    @IBAction func registerAction(_ sender: Any) {
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "register") as! RegisterVC
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
 }
 
